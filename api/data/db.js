@@ -55,4 +55,4 @@ process.once('SIGUSR2', function() {
 
 // BRING IN YOUR SCHEMAS & MODELS
 require('./formulary.model');
-//require('./user.model.js');
+require('./users.model.js');

@@ -1,5 +1,5 @@
-/*var mongoose = require('mongoose');
-//var jwt = require('jsonwebtoken');
+var mongoose = require('mongoose');
+var jwt = require('jsonwebtoken');
 
 var userSchema = new mongoose.Schema({
     username: {
@@ -14,4 +14,4 @@ var userSchema = new mongoose.Schema({
   }
 });
 
-mongoose.model('User', userSchema);*/
+mongoose.model('User', userSchema);
