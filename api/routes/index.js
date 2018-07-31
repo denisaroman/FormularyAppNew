@@ -1,19 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
+var ctrlFormulary = require('../controllers/formulary.controllers.js');
+
+
 router
-    .route('/json')
-    .get(function(req, res){
-        console.log("GET the json");
-        res
-            .status(200)
-            .json({"jsonData": true});
-    })
-    .post(function(req, res){
-        console.log("POST the json");
-        res
-            .status(200)
-            .json({"jsonData": "POST received"});
-    });
+    .route('/homepage')
+    .get(ctrlFormulary.chaptersGetAll)
+    .post(ctrlFormulary.chaptersAddOne);
+
+router
+    .route('/chapter/:chapterId')
+    .get(ctrlFormulary.chaptersGetOne);
+    //.post(ctrlFormulary.detailsAddOne);
 
 module.exports = router;

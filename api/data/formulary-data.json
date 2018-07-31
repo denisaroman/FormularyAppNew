@@ -1,0 +1,276 @@
+[
+    {
+        "Number":1,
+        "Chapter": "Gastro-Intestinal System",
+        "List":
+        [
+            {
+                "CategoryNumber":1,
+                "CategoryName" : "CHRONIC BOWEL DISORDERS BNF CODE – 1.1",
+                "Subcategories":
+                [
+                    {
+                        "Title":"1.3 – Inflammatory Bowel Disease",
+                        "MedicinesGroup":
+                    [
+                    {
+                        "Name":"AMINOSALICYLATES",
+                        "Content":
+                        [
+                            {
+                                "Substance": "MESALAZINE",
+                                "Details": [
+                                    {
+                                        "Brand": "ASACOL MR Tablets 400mg, 800mg, Foam Enema 1g, Suppositories 250mg", 
+                                        "Note": "PCN Mesalazine 400mg MR tablets Policy Statement 2012",
+                                        "Link": "https://www.surreyandsussex.nhs.uk/wp-content/uploads/2013/04/PCN-Mesalazine-400mg-MR-tablets-36-2012.pdf",
+                                        "Color": "Green"
+                                    }, {
+                                        "Brand": "MEZAVANT XL MR Tablets 1.2g; OCTASA MR Tablets 400mg, 800mg",
+                                        "Note": "",
+                                        "Link": "",
+                                        "Color": "Green"
+                                    }, {
+                                        "Brand": "PENTASA MR Tablets 500mg, Suppositories 1g, Retention Enema 1g/100ml",
+                                        "Note": "",
+                                        "Link": "",
+                                        "Color": "Green"
+                                    }, {
+                                        "Brand":"SALOFALK Tablets 250mg, 500mg, Granules 500mg, 1g, 1.5g, 3g",
+                                        "Note": "PCN Salofalk for treatment of Ulcerative Colitis Policy Statement 2016",
+                                        "Link": "https://www.surreyandsussex.nhs.uk/wp-content/uploads/2013/04/PCN-Salofalk-for-treatment-of-Ulcerative-Colitis-Policy-Statement-2016.pdf",
+                                        "Color": "Green"
+                                    }
+                                ]
+  
+                            },
+                            {
+                                "Substance":"OLSALAZINE SODIUM",
+                                "Details":[
+                                    {
+                                        "Brand":"Capsules 250mg, Tablets 500mg",
+                                        "Note":"",
+                                        "Link":"" ,
+                                        "Color":""    
+                                    }
+                                ]
+                            },
+  
+                            {
+                                "Substance": "SULFASALAZINE",
+                                "Details":[
+                                    {
+                                        "Brand": "Tablets EC 500mg",
+                                        "Note": "",
+                                        "Link": "",
+                                        "Color": "Amber"
+                                    },
+                                    {
+                                        "Brand": "Suspension 250mg in 5ml",
+                                        "Note": "",
+                                        "Link": "",
+                                        "Color": "Amber"
+                                    }
+                                ]
+                            }
+  
+                        ]
+                        
+                    },
+                    {
+                        "Name":"CORTICOSTEROIDS",
+                        "Content":[
+                            {
+                                "Substance":"BUDESONIDE",
+                                "Details":[
+                                    {
+                                        "Brand":"3 mg E/C MR Capsules (ENTOCORT)",
+                                        "Note":"RESTRICTED for GASTROENTEROLOGY team only Licensed for mild to moderate Crohns affecting ileum or ascending colon. ADULTS 9mg once daily in the morning for up to 8 weeks Reduce dose for the last 2 weeks of treatment",
+                                        "Link":"",
+                                        "Color":""
+                                    },
+                                    {
+                                        "Brand":"3 mg E/C Capsules (BUDENOFALK)",
+                                        "Note":"RESTRICTED for GASTROENTEROLOGY team only Licensed for mild to moderate Crohns affecting ileum or ascending colon. ADULTS 3mg three times daily for up to 8 weeks Reduce dose for the last 2 weeks of treatment",
+                                        "Link":"",
+                                        "Color":""
+                                    },
+                                    {
+                                        "Brand":"Rectal foam 2mg/metered application",
+                                        "Note":"Recommended by Surrey PCN as 1st line foam enema for UC",
+                                        "Link":"",
+                                        "Color":"Green"
+                                    },
+                                    {
+                                        "Brand":"Rectal foam 2mg/metered application",
+                                        "Note":"PC Budenofalk rectal foam for Ulcerative Colitis Policy Statement 2017",
+                                        "Link":"https://www.surreyandsussex.nhs.uk/wp-content/uploads/2013/04/PC-Budenofalk-rectal-foam-for-Ulcerative-Colitis-Policy-Statement-2017.pdf",
+                                        "Color":"Green"
+                                    }
+                                ]
+                            },
+                            {
+                                "Substance":"HYDROCORTISONE ACETATE",
+                                "Details":[
+                                    {
+                                        "Brand":"10% Foam enema",
+                                        "Note":"",
+                                        "Link":"",
+                                        "Color":"Green"
+                                    }
+                                ]
+                            },
+                            {
+                                "Substance":"PREDNISOLONE",
+                                "Details":[
+                                    {
+                                        "Brand":"Rectal Foam enema 20mg",
+                                        "Note":"",
+                                        "Link":"",
+                                        "Color":"Black"
+                                    }
+                                ]
+                            }
+                        ]
+
+                    }
+                ]
+            },
+            {
+                "Title":"1.4 - Irritable Bowel Syndrome"
+            }
+        ]
+    },
+    {
+        "CategoryNumber": 2,
+        "CategoryName" : "CONSTIPATION & BOWEL CLEANSING",
+        "Subcategories":
+            [
+            {
+               "Title":"2.1 Bowel Cleansing" 
+            },
+            {
+                "Title":"2.2 CONSTIPATION"
+            }
+            ]
+    },
+    {
+        "CategoryNumber":3,
+        "CategoryName" : "DIARRHOEA",
+        "Subcategories":
+            [
+                {
+                    "Title":"",
+                    "MedicinesGroup":
+                    [
+                    {
+                        "Name":"ANTIDIARRHOEAL DRUGS – Antipropulsives",
+                        "Content":
+                        [
+                            {
+                                "Substance":"CODEINE PHOSPHATE",
+                                "Details":[
+                                    {
+                                        "Brand":"Tablets 30mg",
+                                        "Note":"",
+                                        "Link":"",
+                                        "Color":"Green"
+                                    },
+                                    {
+                                        "Brand":"Solution 25mg in 5ml",
+                                        "Note":"",
+                                        "Link":"",
+                                        "Color":"Green"
+                                    }
+                                ]
+                            }
+                            
+                        ]
+                    }
+                    ]
+                }
+            ]
+    },
+    {
+        "CategoryNumber":4,
+        "CategoryName" : "DISORDERS OF GASTRIC ACID & ULCERATION "
+    },
+    {
+        "CategoryNumber":6,
+        "CategoryName" : "GASTRO-INTESTINAL SMOOTH MUSCLE SPASM"
+    },
+    {
+        "CategoryNumber":7,
+        "CategoryName" : "LIVER DISORDERS & RELATED CONDITIONS "
+    },
+    {
+        "CategoryNumber":9,
+        "CategoryName" : "RECTAL & ANAL DISORDERS"
+    },
+    {
+        "CategoryNumber":10,
+        "CategoryName" : "REDUCED EXOCRINE SECRETIONS "
+    }
+]
+},
+{
+    "Number":2,
+    "Chapter":"Cardiovascular system"
+},
+{
+    "Number":3,
+    "Chapter":"Respiratory system"
+},
+{
+    "Number":4,
+    "Chapter":"Central nervous system"
+},
+{
+    "Number":5,
+    "Chapter":"Antimicrobials"
+},
+{
+    "Number":6,
+    "Chapter":"Endocrine system"
+},
+{
+    "Number":7,
+    "Chapter":"Obstetrics, gynaecology and urology"
+},
+{
+    "Number":8,
+    "Chapter":"Malignant disease and immunosuppression"
+},
+{
+    "Number":9,
+    "Chapter":"Nutrition and blood"
+},
+{
+    "Number":10,
+    "Chapter":"Musculoskeletal and joint diseases"
+},
+{
+    "Number":11,
+    "Chapter":"Ophthalmology"
+},
+{
+    "Number":12,
+    "Chapter":"Ear, nose and oropharynx"
+},
+{
+    "Number":13,
+    "Chapter":"Dermatology"
+},
+{
+    "Number":14,
+    "Chapter":"Immunology and vaccines"
+},
+{
+    "Number":15,
+    "Chapter":"Anaesthetics"
+},
+{
+    "Number":16,
+    "Chapter":"Emergency treatment of poisoning"
+}
+]

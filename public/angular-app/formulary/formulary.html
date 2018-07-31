@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <tbody>
+        <tr ng-repeat="subcategory in Subcategories track by $index" class="row100 body">
+            <td class="cell100 column1">
+                <p>{{subcategory.Title}}</p>
+                <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
+                    <h3>{{name.Name}}</h3>
+                    <li ng-repeat="content in name.Content track by $index">
+                        <h4>{{content.Substance}}</h4>
+                        <p ng-repeat="detail in content.Details track by $index">
+                            {{detail.Brand}}
+                            <br>
+                            <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                            <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                        </p>
+                    </li>
+                    
+                </div>
+            </td>    
+        </tr>
+    </tbody>
+</table>

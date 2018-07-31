@@ -1,0 +1,8 @@
+<table class="table table-hover">
+    <tbody>
+      <tr ng-repeat="list in vm.list track by $index">
+        <td>Number {{list.CategoryNumber}}</td>
+        <td><a ng-href="#!/chapter/{{ vm.chapter._id }}/formulary/{{$index}}" style = "color: black;">{{ list.CategoryName }} </a></td>
+      </tr>
+    </tbody>
+</table>

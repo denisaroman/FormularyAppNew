@@ -1,0 +1,10 @@
+<table class="table table-hover">
+    <tbody>
+      <tr ng-repeat="chapter in vm.chapters | orderBy: 'Number' | filter : {Chapter : chapter.search} track by $index">
+        <td>BNF Chapter {{chapter.Number}}</td>
+        <td><a ng-href="#!/chapter/{{ chapter._id }}" style = "color: black;" > {{chapter.Chapter}} </a></td>
+      </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary btn-lg btn-block">Admin Login</button>
