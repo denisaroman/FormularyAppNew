@@ -7,4 +7,5 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-primary btn-lg btn-block">Admin Login</button>
+<button ng-if="!vm.isLoggedIn()" type="button" class="btn btn-primary btn-lg btn-block"><a ng-href="#!/login" style = "color: white;">Admin Login</a></button>
+<button ng-if="vm.isLoggedIn()" type="button" class="btn btn-primary btn-lg btn-block"><a ng-href="#!/add" style = "color: white;">Add</a></button>

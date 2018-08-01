@@ -1,4 +1,4 @@
-angular.module('formularyapp', ['ngRoute']).config(config)
+angular.module('formularyapp', ['ngRoute', 'angular-jwt']).config(config)
 
 
 function config($routeProvider){
@@ -8,6 +8,12 @@ function config($routeProvider){
       controller: HomepageController,
       controllerAs: 'vm'
     })
+
+    .when('/add', {
+        templateUrl: 'angular-app/add/add.html',
+        controller: AddController,
+        controllerAs: 'vm'
+      })
 
     .when('/chapter/:id', {
         templateUrl: 'angular-app/chapters/chapters.html',

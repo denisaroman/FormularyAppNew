@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var formularyData = mongoose.model('ModelName');
 
 module.exports.chaptersGetAll = function(req, res){
-    
+    //console.log("Requested by" + user);
     var offset = 0;
     var count = 16;
 
@@ -42,7 +42,7 @@ module.exports.chaptersGetOne = function(req, res) {
   module.exports.chaptersAddOne = function(req, res) {
     console.log("POST new chapter");
   
-    Chapter
+    formularyData
       .create({
         Number: req.body.Number,
         Chapter: req.body.Chapter,
