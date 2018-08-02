@@ -28,6 +28,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper, $roo
       $http.post('/api/users/login', user).then(function(response) {
         if (response.data.success) {
           $window.sessionStorage.token = response.data.token;
+          //console.log(response.data.token);
           AuthFactory.isLoggedIn = true;
           var token = $window.sessionStorage.token;
           var decodedToken = jwtHelper.decodeToken(token);

@@ -1,9 +1,9 @@
 angular.module('formularyapp').controller('HomepageController', HomepageController);
 
-function HomepageController($http, AuthFactory) {
+function HomepageController($location, $window, formularyDataFactory, AuthFactory) {
     var vm = this;
     vm.titile = 'App';
-    $http.get('/api/homepage').then(function(response){
+    formularyDataFactory.chaptersList().then(function(response){
         console.log(response);
         vm.chapters = response.data;
     });

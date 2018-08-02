@@ -23,13 +23,13 @@ module.exports.register = function(req, res) {
 };
 
 module.exports.login = function(req, res){
-    console.log('logging in user');
+    console.log('logging in user' + req.body.username);
     var username = req.body.username;
     var password = req.body.password;
 
     User.findOne({
         username: username
-    }).exec(function(err,user){
+    }).exec(function(err, user){
         if(err){
             console.log(err);
             res.status(400).json(err);

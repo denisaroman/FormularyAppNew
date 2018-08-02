@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var formularyData = mongoose.model('ModelName');
 
 module.exports.chaptersGetAll = function(req, res){
-    //console.log("Requested by" + user);
+    console.log('Requested by: ' + req.user);
+    
     var offset = 0;
     var count = 50;
 

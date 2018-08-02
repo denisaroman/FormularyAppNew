@@ -1,10 +1,11 @@
 angular.module('formularyapp').controller('ChaptersController', ChaptersController);
 
-function ChaptersController($http, $routeParams) {
+function ChaptersController($route, $routeParams, formularyDataFactory, AuthFactory) {
     var vm = this;
     var id = $routeParams.id;
+    //vm.isSubmitted = false;
 
-    $http.get('/api/chapter/' + id).then(function(response){
+    formularyDataFactory.chaptersDisplay(id).then(function(response){
         console.log(response);
        // $scope.allCategories = response.data;
         //$scope.categId = $routeParams.itemId;
@@ -12,4 +13,30 @@ function ChaptersController($http, $routeParams) {
         vm.chapter = response.data;
         vm.list = response.data.List;
     });
+
+    vm.isLoggedIn = function() {
+      if (AuthFactory.isLoggedIn) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    vm.addList = function() {
+
+    
+        var postData = {
+          CategoryNumber: vm.CategoryNumber,
+          CategoryName: vm.CategoryName
+        };
+        formularyDataFactory.postLists(id, postData).then(function(response) {
+            if (response.status === 200) {
+              $route.reload();
+            }
+          }).catch(function(error) {
+            console.log(error);
+          });
+        
+      };
+    
 }

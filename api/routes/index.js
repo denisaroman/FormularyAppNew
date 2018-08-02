@@ -3,6 +3,7 @@ var router = express.Router();
 
 var ctrlFormulary = require('../controllers/formulary.controllers.js');
 var ctrlAdmin = require('../controllers/users.controllers.js');
+var ctrlLists = require('../controllers/lists.controller.js');
 
 router
     .route('/homepage')
@@ -13,6 +14,12 @@ router
     .route('/chapter/:chapterId')
     .get(ctrlFormulary.chaptersGetOne);
     //.post(ctrlFormulary.detailsAddOne);
+
+// Lists routes
+router
+  .route('/chapter/:chapterId/lists')
+  .get(ctrlLists.listsGetAll)
+  .post(ctrlLists.listsAddOne);
 
 //Authentication
 router
