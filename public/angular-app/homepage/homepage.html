@@ -1,11 +1,25 @@
-<table class="table table-hover">
-    <tbody>
-      <tr ng-repeat="chapter in vm.chapters | orderBy: 'Number' | filter : {Chapter : chapter.search} track by $index">
-        <td>BNF Chapter {{chapter.Number}}</td>
-        <td><a ng-href="#!/chapter/{{ chapter._id }}" style = "color: black;" > {{chapter.Chapter}} </a></td>
-      </tr>
-    </tbody>
-</table>
+<div class="container">
 
-<button ng-if="!vm.isLoggedIn()" type="button" class="btn btn-primary btn-lg btn-block"><a ng-href="#!/login" style = "color: white;">Admin Login</a></button>
-<button ng-if="vm.isLoggedIn()" type="button" class="btn btn-primary btn-lg btn-block"><a ng-href="#!/add" style = "color: white;">Add</a></button>
+<div class="jumbotron">
+    <center><h3>FORMULARY APPLICATION</h3></center>
+    <br>
+    <table class="table table-hover">
+      <tbody>
+        <tr ng-repeat="chapter in vm.chapters | orderBy: 'Number' | filter : {Chapter : chapter.search} track by $index">
+          <td>BNF Chapter {{chapter.Number}}</td>
+          <td><a ng-href="#!/chapter/{{ chapter._id }}" style = "color: black;" > {{chapter.Chapter}} </a></td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
+
+<center>
+  <button ng-if="!vm.isLoggedIn()" type="button" class="btn btn-primary btn-sm"><a ng-href="#!/login" style = "color: white;">Admin Login</a></button>
+  <button ng-if="vm.isLoggedIn()" type="button" class="btn btn-primary btn-sm"><a ng-href="#!/add" style = "color: white;">Add More</a></button>
+  <br>
+  <br>
+  <button ng-if="vm.isLoggedIn()" type="button" class="btn btn-primary btn-sm" ng-click="vm.logout()">Logout</button>
+</center>
+
+</div>

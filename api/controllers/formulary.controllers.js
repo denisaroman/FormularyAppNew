@@ -4,7 +4,7 @@ var formularyData = mongoose.model('ModelName');
 module.exports.chaptersGetAll = function(req, res){
     //console.log("Requested by" + user);
     var offset = 0;
-    var count = 16;
+    var count = 50;
 
     if (req.query && req.query.offset) {
         offset = parseInt(req.query.offset, 10);

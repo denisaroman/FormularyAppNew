@@ -15,4 +15,10 @@ function HomepageController($http, AuthFactory) {
           return false;
         }
       };
+
+    vm.logout = function() {
+        AuthFactory.isLoggedIn = false;
+        delete $window.sessionStorage.token;
+        $location.path('/');
+    }
 }

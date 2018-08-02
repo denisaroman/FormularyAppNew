@@ -1,23 +1,27 @@
+<div class="container">
+<div class="jumbotron">
 <form name"add" ng-submit="vm.add()">
-                    
-    <div class="form-group">
-      <input type="text" class="form-control input-sm" placeholder="Number" ng-model="vm.Number" autocapitalize="none">
+    <div class="row">             
+    <div class="form-group col-sm-6">
+      <input type="text" class="form-control input-sm" placeholder="Chapter Number" ng-model="vm.Number" autocapitalize="none">
     </div>
-    <div class="form-group">
-      <input type="text" class="form-control input-sm" placeholder="Chapter" ng-model="vm.Chapter" autocapitalize="none">
+    <div class="form-group col-sm-6">
+      <input type="text" class="form-control input-sm" placeholder="Chapter Name" ng-model="vm.Chapter" autocapitalize="none">
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control input-sm" placeholder="CategoryNumber" ng-model="vm.CategoryNumber" autocapitalize="none">
+    <div class="form-group col-sm-6">
+        <input type="text" class="form-control input-sm" placeholder="Category Number" ng-model="vm.CategoryNumber" autocapitalize="none">
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control input-sm" placeholder="CategoryName" ng-model="vm.CategoryName" autocapitalize="none">
+      <div class="form-group col-sm-6">
+        <input type="text" class="form-control input-sm" placeholder="Category Name" ng-model="vm.CategoryName" autocapitalize="none">
       </div>
-    <div class="form-group">
+    <div class="form-group col-sm-6">
       <input type="text" class="form-control input-sm" placeholder="Title" ng-model="vm.Title" autocapitalize="none">
     </div>
-    <div class="form-group">
+    <div class="form-group col-sm-6">
       <input type="text" class="form-control input-sm" placeholder="Name" ng-model="vm.Name" autocapitalize="none">
     </div>
+    </div>  
+    <center>
     <div class="form-group">
         <input type="text" class="form-control input-sm" placeholder="Substance" ng-model="vm.Substance" autocapitalize="none">
     </div>
@@ -34,5 +38,7 @@
       <input type="text" class="form-control input-sm" placeholder="Color" ng-model="vm.Color" autocapitalize="none">
     </div>
     <br/><button type="submit" class="btn-primary">Add</button>
-    
+    </center>
 </form>
+</div>
+</div>

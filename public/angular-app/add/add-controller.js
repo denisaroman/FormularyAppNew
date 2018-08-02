@@ -1,6 +1,6 @@
 angular.module('formularyapp').controller('AddController', AddController);
 
-function AddController($http) {
+function AddController($http, $window) {
   var vm = this;
 
   vm.add = function() {
@@ -19,6 +19,7 @@ function AddController($http) {
     }
 $http.post('/api/homepage', chapter).then(function(result) {
         console.log(result);
+        $window.location.href = '#';
     }).catch(function(error) {
         console.log(error);
     })
