@@ -1,6 +1,10 @@
+<head>
+    <link href="css/dropdown.css" rel="stylesheet" />
+</head> 
+<body>
 <div class="container">
 <div class="jumbotron">
-<table class="table table-hover">
+<!--table class="table table-hover">
     <tbody>
         <tr ng-repeat="subcategory in Subcategories track by $index" class="row100 body">
             <td class="cell100 column1">
@@ -21,6 +25,95 @@
             </td>    
         </tr>
     </tbody>
-</table>
+        
+</table-->
+<div ng-repeat="subcategory in Subcategories track by $index">
+        <button class="accordion" data-ng-click="subcategory.active = !subcategory.active" data-ng-class="{'active': subcategory.active}">{{subcategory.Title}}</button>
+        <div class="panel">
+            <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
+                <button class="accordion" data-ng-click="name.active = !name.active" data-ng-class="{'active': name.active}">{{name.Name}}</button>
+                <div class="panel">
+                <div ng-repeat="content in name.Content track by $index">
+                        <button class="accordion" data-ng-click="content.active = !content.active" data-ng-class="{'active': content.active}">{{content.Substance}}</button>
+                        <div class="panel">
+                            <div ng-repeat="detail in content.Details track by $index">
+                                <div ng-switch="detail.Color">
+                                    <div ng-switch-when="Black" class="row" style = "background-color: black;" >
+                                        <div class="col-md-6">
+                                            <p>{{detail.Brand}}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                            <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                                        </div>
+                                    </div>
+                                    <div ng-switch-when="Red" class="row" style = "background-color: red;" >
+                                            <div class="col-md-6">
+                                                <p>{{detail.Brand}}</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                                <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                                            </div>
+                                    </div>
+                                    <div ng-switch-when="Amber" class="row" style = "background-color: #FFC200;" >
+                                            <div class="col-md-6">
+                                                <p>{{detail.Brand}}</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                                <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                                            </div>
+                                    </div>
+                                    <div ng-switch-when="Blue" class="row" style = "background-color: rgb(124, 178, 209);" >
+                                            <div class="col-md-6">
+                                                <p>{{detail.Brand}}</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                                <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                                            </div>
+                                    </div>
+                                    <div ng-switch-when="Green" class="row" style = "background-color: #7dcf25;" >
+                                            <div class="col-md-6">
+                                                <p>{{detail.Brand}}</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                                <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                                            </div>
+                                    </div>
+                                    <div ng-switch-default class="row" style = "background-color: white;" >
+                                            <div class="col-md-6">
+                                                <p>{{detail.Brand}}</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                                <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                                            </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <table>
+                        </div>
+                        </div>
+                </div>
+            </div>
+          
+        </div>
 </div>
 </div>
+</div>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+    }
+</script>
+</body>

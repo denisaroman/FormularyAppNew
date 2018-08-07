@@ -23,7 +23,7 @@ var subcategSchema = new mongoose.Schema({
 });
 
 var listSchema = new mongoose.Schema({
-  CategoryNumber: Number,
+  CategoryNumber: String,
   CategoryName: String,
   Subcategories: [subcategSchema]
 });
