@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/Formulary';
+var dburl = 'mongodb://denisaroman:Summerpj1@ds125352.mlab.com:25352/formulary';
 var retry = null;
 mongoose.connect(dburl);
 
