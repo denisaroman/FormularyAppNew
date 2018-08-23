@@ -11,6 +11,13 @@ function config($httpProvider, $routeProvider){
       controllerAs: 'vm'
     })
 
+    .when('/substance', {
+      templateUrl: 'angular-app/substance/substance.html',
+      controller: HomepageController,
+      controllerAs: 'vm'
+    })
+
+
     .when('/add', {
         templateUrl: 'angular-app/add/add.html',
         controller: AddController,

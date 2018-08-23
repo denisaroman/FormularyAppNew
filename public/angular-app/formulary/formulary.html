@@ -3,6 +3,12 @@
 </head> 
 <body>
 <div class="container">
+        <!--center>
+            <input class="form-control mr-sm-4" name="search" placeholder="Search by Substance" ng-model="substance.search" ng-init="count=10">
+            
+            <input class="form-control mr-sm-4" name="search" placeholder="Search by Brand" ng-model="brand.search" ng-init="count=10">
+        </center-->
+        <hr>
 <div class="jumbotron">
 <!--table class="table table-hover">
     <tbody>
@@ -33,10 +39,10 @@
             <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
                 <button class="accordion" data-ng-click="name.active = !name.active" data-ng-class="{'active': name.active}">{{name.Name}}</button>
                 <div class="panel">
-                <div ng-repeat="content in name.Content track by $index">
+                <div ng-repeat="content in name.Content |  filter : {Substance : substance.search} track by $index">
                         <button class="accordion" data-ng-click="content.active = !content.active" data-ng-class="{'active': content.active}">{{content.Substance}}</button>
                         <div class="panel">
-                            <div ng-repeat="detail in content.Details track by $index">
+                            <div ng-repeat="detail in content.Details |  filter : {Brand : brand.search} track by $index">
                                 <div ng-switch="detail.Color">
                                     <div ng-switch-when="Black" class="row" style = "background-color: black;" >
                                         <div class="col-md-6">

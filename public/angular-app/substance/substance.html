@@ -1,0 +1,50 @@
+<body>
+    <div class="container">
+            <center>
+                    <input  name="search" placeholder="Search by Substance" ng-model="substance.search" ng-init="count=10">
+                    
+                    <input  name="search" placeholder="Search by Brand" ng-model="brand.search" ng-init="count=10">
+                </center>
+                <hr>
+    <div class="jumbotron">
+        <div ng-repeat="chapter in vm.chapters | orderBy: 'Number' track by $index"> 
+            <div ng-repeat="list in chapter.List track by $index">
+                <div ng-repeat="subcategory in list.Subcategories track by $index">
+                    <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
+                        <div ng-repeat="content in name.Content | filter : {Substance : substance.search} track by $index">
+                            <h4>{{content.Substance}}</h4>
+                            <table class="table table-hover">
+                                <tr ng-repeat="detail in content.Details |  filter : {Brand : brand.search} track by $index">
+                                    <td>{{detail.Brand}}</td>
+                                    <td>{{detail.Note}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--table class="table table-hover">
+        <tbody>
+            <tr ng-repeat="subcategory in Subcategories track by $index" class="row100 body">
+                <td class="cell100 column1">
+                    <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
+                        <li ng-repeat="content in name.Content track by $index">
+                            <h4>{{content.Substance}}</h4>
+                            <p ng-repeat="detail in content.Details track by $index">
+                                {{detail.Brand}}
+                                <br>
+                                <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
+                                <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
+                            </p>
+                        </li>
+                        
+                    </div>
+                </td>    
+            </tr>
+        </tbody>
+        
+</table-->
+    </div>
+    </div>
+</body>    
