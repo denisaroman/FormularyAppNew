@@ -12,7 +12,9 @@ router
 
 router
     .route('/chapter/:chapterId')
-    .get(ctrlFormulary.chaptersGetOne);
+    .get(ctrlFormulary.chaptersGetOne)
+    .put(ctrlFormulary.chaptersUpdateOne)
+    .delete(ctrlFormulary.chaptersDeleteOne);
     //.post(ctrlFormulary.detailsAddOne);
 
 // Lists routes
@@ -20,6 +22,12 @@ router
   .route('/chapter/:chapterId/lists')
   .get(ctrlLists.listsGetAll)
   .post(ctrlLists.listsAddOne);
+
+router
+  .route('/chapter/:chapterId/lists/:listId')
+  .get(ctrlLists.listsGetOne)
+  .put(ctrlLists.listsUpdateOne)
+  .delete(ctrlLists.listsDeleteOne);
 
 //Authentication
 router

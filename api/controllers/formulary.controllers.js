@@ -94,3 +94,68 @@ module.exports.chaptersGetOne = function(req, res) {
   };
 
   //updateOne
+  module.exports.chaptersUpdateOne = function(req, res) {
+    var chapterId = req.params.chapterId;
+  
+    console.log('GET chapterId', chapterId);
+  
+    formularyData
+      .findById(chapterId)
+      .select('-List')
+      .exec(function(err, chapter) {
+        /*if (err) {
+          console.log("Error finding chapter");
+          res
+            .status(500)
+            .json(err);
+            return;
+        } else if(!chapter) {
+          console.log("ChapterId not found in database", chapterId);
+          res
+            .status(404)
+            .lson({
+              "message" : "Chapter ID not found " + chapterId
+            });
+            return;
+        }*/
+  
+        chapter.Number = req.body.Number;
+        chapter.Chapter = req.body.Chapter;
+        console.log(req.body.Number + req.body.Chapter);
+        
+        chapter
+          .save(function(err, chapterUpdated) {
+            if(err) {
+              res
+                .status(500)
+                .json(err);
+            } else {
+              res
+                .status(204)
+                .json(chapter);
+            }
+          });
+  
+  
+      });
+  
+  };
+
+  module.exports.chaptersDeleteOne = function(req, res) {
+    var chapterId = req.params.chapterId;
+  
+    formularyData
+      .findByIdAndRemove(chapterId)
+      .exec(function(err, location) {
+        if (err) {
+          res
+            .status(404)
+            .json(err);
+        } else {
+          console.log("Chapter deleted, id:", chapterId);
+          res
+            .status(204)
+            .json();        
+        }
+      });
+  };

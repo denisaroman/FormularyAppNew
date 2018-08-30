@@ -4,11 +4,11 @@ var formularyData = mongoose.model('ModelName');
 
 // GET all lists for a chapter
 module.exports.listsGetAll = function(req, res) {
-  var id = req.params.chapterId;
+  var chapterId = req.params.chapterId;
   console.log('GET lsits for chapterId', id);
 
   formularyData
-    .findById(id)
+    .findById(chapterId)
     .select('List')
     .exec(function(err, doc) {
       var response = {
@@ -53,10 +53,10 @@ module.exports.listsGetOne = function(req, res) {
         response.status = 500;
         response.message = err;
       } else if(!chapter) {
-        console.log("Chapter id not found in database", id);
+        console.log("Chapter id not found in database", chapterId);
         response.status = 404;
         response.message = {
-          "message" : "Chapter ID not found " + id
+          "message" : "Chapter ID not found " + chapterId
         };
       } else {
         // Get the lsit
@@ -132,6 +132,120 @@ module.exports.listsAddOne = function(req, res) {
           .json(response.message);
       }
     });
+  };
 
+    module.exports.listsUpdateOne = function(req, res) {
+      var chapterId = req.params.chapterId;
+      var listId = req.params.listId;
+      console.log('PUT listId ' + listId + ' for chapterId ' + chapterId);
+      console.log(req.body.CategoryNumber);
+      formularyData
+        .findById(chapterId)
+        .select('List')
+        .exec(function(err, chapter) {
+          var thisList;
+          var response = {
+            status : 200,
+            message : {}
+          };
+          if (err) {
+            console.log("Error finding chapter");
+            response.status = 500;
+            response.message = err;
+          } else if(!chapter) {
+            console.log("Chapter id not found in database", id);
+            response.status = 404;
+            response.message = {
+              "message" : "Chapter ID not found " + id
+            };
+          } else {
+            // Get the list
+            thisList = chapter.List.id(listId);
+            // If the list doesn't exist Mongoose returns null
+            if (!thisList) {
+              response.status = 404;
+              response.message = {
+                "message" : "List ID not found " + listId
+              };
+            }
+          }
+          if (response.status !== 200) {
+            res
+              .status(response.status)
+              .json(response.message);
+          } else {
+            console.log(req.body.CategoryNumber);
+            thisList.CategoryName = req.body.CategoryName; 
+            thisList.CategoryNumber = req.body.CategoryNumber;
+            chapter.save(function(err, chapterUpdated) {
+              if (err) {
+                res
+                  .status(500)
+                  .json(err);
+              } else {
+                res
+                  .status(204)
+                  .json();
+              }
+            });
+          }
+        });
+
+};
+
+module.exports.listsDeleteOne = function(req, res) {
+  var chapterId = req.params.chapterId;
+  var listId = req.params.listId;
+  console.log('PUT listId ' + listId + ' for chapterId ' + chapterId);
+
+  formularyData
+    .findById(chapterId)
+    .select('List')
+    .exec(function(err, chapter) {
+      var thisList;
+      var response = {
+        status : 200,
+        message : {}
+      };
+      if (err) {
+        console.log("Error finding chapter");
+        response.status = 500;
+        response.message = err;
+      } else if(!chapter) {
+        console.log("Chapter id not found in database", id);
+        response.status = 404;
+        response.message = {
+          "message" : "Chapter ID not found " + id
+        };
+      } else {
+        // Get the review
+        thisList = chapter.List.id(listId);
+        // If the review doesn't exist Mongoose returns null
+        if (!thisList) {
+          response.status = 404;
+          response.message = {
+            "message" : "Review ID not found " + reviewId
+          };
+        }
+      }
+      if (response.status !== 200) {
+        res
+          .status(response.status)
+          .json(response.message);
+      } else {
+        chapter.List.id(listId).remove();
+        chapter.save(function(err, chapterUpdated) {
+          if (err) {
+            res
+              .status(500)
+              .json(err);
+          } else {
+            res
+              .status(204)
+              .json();
+          }
+        });
+      }
+    });
 
 };
