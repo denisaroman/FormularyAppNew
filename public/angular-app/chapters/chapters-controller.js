@@ -37,6 +37,5 @@ function ChaptersController($route, $routeParams, formularyDataFactory, AuthFact
             console.log(error);
           });
         
-      };
-    
+      };    
 }

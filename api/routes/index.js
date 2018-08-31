@@ -4,6 +4,7 @@ var router = express.Router();
 var ctrlFormulary = require('../controllers/formulary.controllers.js');
 var ctrlAdmin = require('../controllers/users.controllers.js');
 var ctrlLists = require('../controllers/lists.controller.js');
+var ctrlSubcategories = require('../controllers/subcategories.controller.js');
 
 router
     .route('/homepage')
@@ -27,7 +28,8 @@ router
   .route('/chapter/:chapterId/lists/:listId')
   .get(ctrlLists.listsGetOne)
   .put(ctrlLists.listsUpdateOne)
-  .delete(ctrlLists.listsDeleteOne);
+  .delete(ctrlLists.listsDeleteOne)
+  .post(ctrlSubcategories.subcategoriesAddOne);
 
 //Authentication
 router

@@ -17,46 +17,46 @@ function config($httpProvider, $routeProvider){
       controllerAs: 'vm'
     })
 
-
     .when('/add', {
         templateUrl: 'angular-app/add/add.html',
         controller: AddController,
         controllerAs: 'vm'
       })
 
+    .when('/update/:id', {
+        templateUrl: 'angular-app/homepage/chapterupdate.html',
+        controller: HomepageController,
+        controllerAs: 'vm'
+    })
+
     .when('/chapter/:id', {
         templateUrl: 'angular-app/chapters/chapters.html',
         controller: ChaptersController,
-        controllerAs: 'vm',
-        access:{
-            restricted: false
-        }
+        controllerAs: 'vm'
     })
 
-    .when('/chapter/:id/formulary/:index', {
+    .when('/update/:chapterId/formulary/:listId', {
+      templateUrl: 'angular-app/chapters/categoryupdate.html',
+      controller: CategoryUpdateController,
+      controllerAs: 'vm'
+    })
+
+    .when('/chapter/:chapterId/formulary/:listId/:index', {
         templateUrl: 'angular-app/formulary/formulary.html',
         controller: FormularyController,
-        controllerAs: 'vm',
-        access:{
-            restricted: false
-        }
+        controllerAs: 'vm'
     })
+
     .when('/register', {
         templateUrl: 'angular-app/register/register.html',
         controller: RegisterController,
-        controllerAs: 'vm',
-        access:{
-          restricted: false
-        }
-        //css: ['angular-app/register/register.css']
+        controllerAs: 'vm'
       })
-      .when('/login', {
+
+    .when('/login', {
         templateUrl: 'angular-app/login/login.html',
         controller: LoginController,
-        controllerAs: 'vm',
-        access:{
-          restricted: false
-        }
+        controllerAs: 'vm'
       });
     }
 

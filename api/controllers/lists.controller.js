@@ -77,6 +77,7 @@ module.exports.listsGetOne = function(req, res) {
 };
 
 var _addList = function (req, res, chapter) {
+  console.log("This is what it is"+chapter.List);
   
   chapter.List.push({
     CategoryNumber: req.body.CategoryNumber,

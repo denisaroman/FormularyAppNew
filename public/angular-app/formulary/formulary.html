@@ -3,36 +3,14 @@
 </head> 
 <body>
 <div class="container">
-        <!--center>
-            <input class="form-control mr-sm-4" name="search" placeholder="Search by Substance" ng-model="substance.search" ng-init="count=10">
-            
-            <input class="form-control mr-sm-4" name="search" placeholder="Search by Brand" ng-model="brand.search" ng-init="count=10">
-        </center-->
-        <hr>
+<hr>
 <div class="jumbotron">
-<!--table class="table table-hover">
-    <tbody>
-        <tr ng-repeat="subcategory in Subcategories track by $index" class="row100 body">
-            <td class="cell100 column1">
-                <p>{{subcategory.Title}}</p>
-                <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
-                    <h3>{{name.Name}}</h3>
-                    <li ng-repeat="content in name.Content track by $index">
-                        <h4>{{content.Substance}}</h4>
-                        <p ng-repeat="detail in content.Details track by $index">
-                            {{detail.Brand}}
-                            <br>
-                            <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
-                            <a ng-if="!detail.Link" style = "color: black;">{{detail.Note}}</a>
-                        </p>
-                    </li>
-                    
-                </div>
-            </td>    
-        </tr>
-    </tbody>
-        
-</table-->
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.addSubcategory()">
+       <center><input type="text" class="form-control input-sm" ng-model="vm.Title"></center>
+       <br> 
+        <center><button type="submit" class="btn-primary">Add New Title</button></center>
+</form>
+<hr>
 <div ng-repeat="subcategory in Subcategories track by $index">
         <button class="accordion" data-ng-click="subcategory.active = !subcategory.active" data-ng-class="{'active': subcategory.active}">{{subcategory.Title}}</button>
         <div class="panel">
@@ -109,8 +87,11 @@
           
         </div>
 </div>
+
 </div>
 </div>
+
+
 <script>
     var acc = document.getElementsByClassName("accordion");
     var i;

@@ -103,7 +103,7 @@ module.exports.chaptersGetOne = function(req, res) {
       .findById(chapterId)
       .select('-List')
       .exec(function(err, chapter) {
-        /*if (err) {
+        if (err) {
           console.log("Error finding chapter");
           res
             .status(500)
@@ -117,11 +117,11 @@ module.exports.chaptersGetOne = function(req, res) {
               "message" : "Chapter ID not found " + chapterId
             });
             return;
-        }*/
+        }
   
         chapter.Number = req.body.Number;
         chapter.Chapter = req.body.Chapter;
-        console.log(req.body.Number + req.body.Chapter);
+        console.log(req.body.Number + " "+ req.body.Chapter);
         
         chapter
           .save(function(err, chapterUpdated) {

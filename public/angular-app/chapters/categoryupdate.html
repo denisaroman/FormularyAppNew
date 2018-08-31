@@ -1,0 +1,29 @@
+<div class="container">
+        <div class="jumbotron">
+        
+        <form ng-if="vm.isLoggedIn()" ng-submit="vm.updateCategory()">
+            <div>
+              <!--p> BNF Chapter {{vm.chapter.Number}} - {{vm.chapter.Chapter}}</p-->
+              <div class="row">
+                      <div class="form-group col-sm-9">
+                        New Category Number <input type="text" class="form-control input-sm" ng-model="vm.CategoryNumber">
+                        New Category Name <input type="text" class="form-control input-sm" ng-model="vm.CategoryName">
+                      </div>
+                      <div class="form-group col-sm-3">
+                        <br>
+                        <hr>
+                        <center><button type="submit" class="btn-primary">Update</button></center>
+                        <hr>
+                      </div>
+            </div>
+            
+          </form>
+        
+          <form ng-if="vm.isLoggedIn()" ng-submit="vm.deleteCategory()">
+              <button type="submit" class="btn-primary">Delete Entire Category</button>
+          </form>
+        
+        </div>
+        </div>
+         
+        

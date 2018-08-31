@@ -8,21 +8,26 @@
           <tbody>
             <tr ng-repeat="list in vm.list | filter : {CategoryName : category.search} track by $index">
               <td>Number {{list.CategoryNumber}}</td>
-              <td><a ng-href="#!/chapter/{{ vm.chapter._id }}/formulary/{{$index}}" style = "color: black;">{{ list.CategoryName }} </a></td>
+              <td><a ng-href="#!/chapter/{{ vm.chapter._id }}/formulary/{{list._id}}/{{$index}}" style = "color: black;">{{ list.CategoryName }} </a></td>
+              <td><button ng-if="vm.isLoggedIn()" class="btn btn-primary btn-sm"><a ng-href="#!/update/{{ vm.chapter._id }}/formulary/{{list._id}}" style = "color: black;" > Update</a></button></td>
             </tr>
           </tbody>
       </table>
 
       <form ng-if="vm.isLoggedIn()" ng-submit="vm.addList()">
           <div class="row">
-              <div class="form-group col-sm-6">
-                Category Number: <input type="text" class="form-control input-sm" ng-model="vm.CategoryNumber">
+              <div class="form-group col-sm-9">
+                Add Category Number: <input type="text" class="form-control input-sm" ng-model="vm.CategoryNumber">
+                Add Category Name: <input type="text" class="form-control input-sm" ng-model="vm.CategoryName">
               </div>
-              <div class="form-group col-sm-6">
-                Category Name: <input type="text" class="form-control input-sm" ng-model="vm.CategoryName">
+              <div class="form-group col-sm-3">
+                <br>
+                <hr>
+                <center><button type="submit" class="btn-primary">Add Category</button></center>
+                <hr>
               </div>
           </div>
-          <center><button type="submit" class="btn-primary">Add Category</button></center>
+          
         </form>
     </div>
 </div>
