@@ -36,15 +36,26 @@ router
 
 router
   .route('/chapter/:chapterId/lists/:listId/:subcategoryId') 
-  .post(ctrlMedicines.medicinesAddOne);
+  .post(ctrlMedicines.medicinesAddOne)
+  .put(ctrlSubcategories.subcategoriesUpdateOne)
+  .delete(ctrlSubcategories.subcategoriesDeleteOne);
 
 router
     .route('/chapter/:chapterId/lists/:listId/:subcategoryId/:medicineGroupId')
-    .post(ctrlSubstances.substancesAddOne);
+    .post(ctrlSubstances.substancesAddOne)
+    .put(ctrlMedicines.medicinesUpdateOne)
+    .delete(ctrlMedicines.medicinesDeleteOne);
 
 router
     .route('/chapter/:chapterId/lists/:listId/:subcategoryId/:medicineGroupId/:substanceId')
-    .post(ctrlBrand.brandAddOne);
+    .post(ctrlBrand.brandAddOne)
+    .put(ctrlSubstances.substancesUpdateOne)
+    .delete(ctrlSubstances.substancesDeleteOne);
+
+router
+    .route('/chapter/:chapterId/lists/:listId/:subcategoryId/:medicineGroupId/:substanceId/:detailsId')
+    .put(ctrlBrand.brandsUpdateOne)
+    .delete(ctrlBrand.brandsDeleteOne);
 
 //Authentication
 router

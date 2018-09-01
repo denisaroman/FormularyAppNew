@@ -1,10 +1,34 @@
 <div class="container">
-        <hr>
-        <div class="jumbotron">
-        <form ng-if="vm.isLoggedIn()" ng-submit="vm.addSubstance()">
-            <center><input type="text" class="form-control input-sm" ng-model="vm.Substance"></center>
-            <br> 
-             <center><button type="submit" class="btn-primary">Add New </button></center>
-        </form>
+<hr>
+<div class="jumbotron">
+<h5>Add New Substance</h5>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.addSubstance()">
+    <div class="row">
+            <div class="form-group col-sm-9">
+                Substance<input type="text" class="form-control input-sm" ng-model="vm.Substance">
+            </div>
+            <div class="form-group col-sm-3">
+                <hr>
+                <center><button type="submit" class="btn-primary">Add</button></center>
+                <hr>
+            </div>
+    </div>
+</form>
+<h5>Edit Medicine Group Name</h5>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.updateMedicineGroup()">
+        <div class="row">
+            <div class="form-group col-sm-9">
+                New Name <input type="text" class="form-control input-sm" ng-model="vm.Name">
+            </div>
+            <div class="form-group col-sm-3">
+                <hr>
+                <center><button type="submit" class="btn-primary">Edit</button></center>
+                <hr>
+            </div>
         </div>
-        </div>
+</form>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.deleteMedicineGroup()">
+        <button type="submit" class="btn-primary">Delete</button>
+</form>
+</div>
+</div>

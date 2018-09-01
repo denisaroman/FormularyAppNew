@@ -14,20 +14,25 @@
 <div ng-repeat="subcategory in Subcategories track by $index">
         <button class="accordion" data-ng-click="subcategory.active = !subcategory.active" data-ng-class="{'active': subcategory.active}">{{subcategory.Title}}</button>
         <div class="panel">
-            <center><a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}">Add More</a></center>
+            <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}">Update</a>
+            <hr>
             <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
                 <button class="accordion" data-ng-click="name.active = !name.active" data-ng-class="{'active': name.active}">{{name.Name}}</button>
                 <div class="panel">
-                <center><a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}">Add More Substances</a></center>
+                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}">Update</a>
+                <hr>
                 <div ng-repeat="content in name.Content |  filter : {Substance : substance.search} track by $index">
                         <button class="accordion" data-ng-click="content.active = !content.active" data-ng-class="{'active': content.active}">{{content.Substance}}</button>
                         <div class="panel">
-                                <center><a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}">Add More</a></center>
+                                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}">Update</a>
+                                <hr>
                             <div ng-repeat="detail in content.Details |  filter : {Brand : brand.search} track by $index">
                                 <div ng-switch="detail.Color">
                                     <div ng-switch-when="Black" class="row" style = "background-color: black;" >
                                         <div class="col-md-6">
                                             <p>{{detail.Brand}}</p>
+                                            
+                                            <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}/{{detail._id}}">Update</a>
                                         </div>
                                         <div class="col-md-6">
                                             <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
@@ -37,6 +42,8 @@
                                     <div ng-switch-when="Red" class="row" style = "background-color: red;" >
                                             <div class="col-md-6">
                                                 <p>{{detail.Brand}}</p>
+                                                
+                                                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}/{{detail._id}}">Update</a>
                                             </div>
                                             <div class="col-md-6">
                                                 <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
@@ -46,6 +53,8 @@
                                     <div ng-switch-when="Amber" class="row" style = "background-color: #FFC200;" >
                                             <div class="col-md-6">
                                                 <p>{{detail.Brand}}</p>
+                                                
+                                                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}/{{detail._id}}">Update</a>
                                             </div>
                                             <div class="col-md-6">
                                                 <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
@@ -55,6 +64,8 @@
                                     <div ng-switch-when="Blue" class="row" style = "background-color: rgb(124, 178, 209);" >
                                             <div class="col-md-6">
                                                 <p>{{detail.Brand}}</p>
+                                                
+                                                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}/{{detail._id}}">Update</a>
                                             </div>
                                             <div class="col-md-6">
                                                 <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
@@ -64,6 +75,8 @@
                                     <div ng-switch-when="Green" class="row" style = "background-color: #7dcf25;" >
                                             <div class="col-md-6">
                                                 <p>{{detail.Brand}}</p>
+                                                
+                                                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}/{{detail._id}}">Update</a>
                                             </div>
                                             <div class="col-md-6">
                                                 <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>
@@ -73,6 +86,8 @@
                                     <div ng-switch-default class="row" style = "background-color: white;" >
                                             <div class="col-md-6">
                                                 <p>{{detail.Brand}}</p>
+                                                
+                                                <a ng-if="vm.isLoggedIn()" ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}/{{name._id}}/{{content._id}}/{{detail._id}}">Update</a>
                                             </div>
                                             <div class="col-md-6">
                                                 <a ng-if="detail.Link" ng-href="{{detail.Link}}" style = "color: blue;">{{detail.Note}}</a>

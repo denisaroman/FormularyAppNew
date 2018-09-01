@@ -1,13 +1,41 @@
 <div class="container">
+<hr>
+<div class="jumbotron">
+    <form ng-if="vm.isLoggedIn()" ng-submit="vm.addBrand()">
+    <h5>Add Brand</h5>
+    <div class="row">
+        <div class="form-group col-sm-9">
+        Brand: <input type="text" class="form-control input-sm" ng-model="vm.Brand">
+        Note: <input type="text" class="form-control input-sm" ng-model="vm.Note">
+        Link: <input type="text" class="form-control input-sm" ng-model="vm.Link">
+        Color: <input type="text" class="form-control input-sm" ng-model="vm.Color">
+        <br> 
+        </div>
+        <div class="form-group col-sm-3">
+        <br>
+        <br>
+        <br>
         <hr>
-        <div class="jumbotron">
-        <form ng-if="vm.isLoggedIn()" ng-submit="vm.addBrand()">
-            <center><input type="text" class="form-control input-sm" ng-model="vm.Brand"></center>
-            <center><input type="text" class="form-control input-sm" ng-model="vm.Note"></center>
-            <center><input type="text" class="form-control input-sm" ng-model="vm.Link"></center>
-            <center><input type="text" class="form-control input-sm" ng-model="vm.Color"></center>
-            <br> 
-             <center><button type="submit" class="btn-primary">Add New </button></center>
-        </form>
+        <center><button type="submit" class="btn-primary">Add </button></center>
+        <hr>
         </div>
         </div>
+    </form>
+<h5>Edit Substance</h5>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.updateSubstance()">
+        <div class="row">
+            <div class="form-group col-sm-9">
+                <input type="text" class="form-control input-sm" ng-model="vm.Substance">
+            </div>
+            <div class="form-group col-sm-3">
+                
+                <center><button type="submit" class="btn-primary">Edit</button></center>
+                
+            </div>
+        </div>
+</form>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.deleteSubstance()">
+        <button type="submit" class="btn-primary">Delete</button>
+</form>
+</div>
+</div>

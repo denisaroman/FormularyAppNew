@@ -1,0 +1,27 @@
+<div class="container">
+<hr>
+<div class="jumbotron">
+<h5>Edit Details</h5>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.updateDetails()">
+        <div class="row">
+            <div class="form-group col-sm-9">
+                New Brand <input type="text" class="form-control input-sm" ng-model="vm.Brand">
+                New Note: <input type="text" class="form-control input-sm" ng-model="vm.Note">
+                New Link: <input type="text" class="form-control input-sm" ng-model="vm.Link">
+                New Color: <input type="text" class="form-control input-sm" ng-model="vm.Color">
+            </div>
+            <div class="form-group col-sm-3">
+                <br>
+                <br>
+                <br>
+                <hr>
+                <center><button type="submit" class="btn-primary">Edit</button></center>
+                <hr>
+            </div>
+        </div>
+</form>
+<form ng-if="vm.isLoggedIn()" ng-submit="vm.deleteDetails()">
+        <button type="submit" class="btn-primary">Delete</button>
+</form>
+</div>
+</div>
