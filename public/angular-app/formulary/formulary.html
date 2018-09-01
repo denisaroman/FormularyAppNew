@@ -14,8 +14,10 @@
 <div ng-repeat="subcategory in Subcategories track by $index">
         <button class="accordion" data-ng-click="subcategory.active = !subcategory.active" data-ng-class="{'active': subcategory.active}">{{subcategory.Title}}</button>
         <div class="panel">
+            <center><a ng-href="#!/chapter/{{ vm.chapter }}/formulary/{{vm.list}}/{{vm.index}}/{{subcategory._id}}">Add More</a></center>
             <div ng-repeat="name in subcategory.MedicinesGroup track by $index">
                 <button class="accordion" data-ng-click="name.active = !name.active" data-ng-class="{'active': name.active}">{{name.Name}}</button>
+                
                 <div class="panel">
                 <div ng-repeat="content in name.Content |  filter : {Substance : substance.search} track by $index">
                         <button class="accordion" data-ng-click="content.active = !content.active" data-ng-class="{'active': content.active}">{{content.Substance}}</button>

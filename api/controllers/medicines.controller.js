@@ -2,14 +2,14 @@ var mongoose = require('mongoose');
 var formularyData = mongoose.model('ModelName');
 
 
-var _addSubcategory = function (req, res, chapter) {
+var _addMedicine = function (req, res, chapter) {
   
 var listId = req.params.listId;
-thisList = chapter.List.id(listId);
-console.log(thisList);
+var subcategoryId = req.params.subcategoryId;
+thisSubcategory = chapter.List.id(listId).Subcategories.id(subcategoryId);
 
-thisList.Subcategories.push({
-    Title: req.body.Title
+thisSubcategory.MedicinesGroup.push({
+    Name: req.body.Name
   });
 
   chapter.save(function(err, chapterUpdated) {
@@ -20,19 +20,20 @@ thisList.Subcategories.push({
     } else {
       res
         .status(200)
-        .json(thisList.Subcategories[thisList.Subcategories.length - 1]);
+        .json(thisSubcategory.MedicinesGroup[thisSubcategory.MedicinesGroup.length - 1]);
     }
   });
 
 };
 
-module.exports.subcategoriesAddOne = function(req, res) {
+module.exports.medicinesAddOne = function(req, res) {
 
   var chapterId = req.params.chapterId;
   var listId = req.params.listId;
+  var subcategoryId = req.params.subcategoryId;
   
 
-  console.log('POST subcategory to listId', listId);
+  //console.log('POST subcategory to listId', listId);
 
   formularyData
     .findById(chapterId)
@@ -54,9 +55,9 @@ module.exports.subcategoriesAddOne = function(req, res) {
         };
       } else {
           //Get the list
-          thisList=chapter.List.id(listId);
+          thisSubcategory = chapter.List.id(listId).Subcategories.id(subcategoryId);
 
-          if(!thisList){
+          if(!thisSubcategory){
               response.status=404;
               response.message={
                   "message" : "ListId not found" + listId
@@ -70,7 +71,7 @@ module.exports.subcategoriesAddOne = function(req, res) {
     } else {
         
         console.log("Getting to add the subcategory!!")
-        _addSubcategory(req, res, chapter);
+        _addMedicine(req, res, chapter);
  
     };  
 })

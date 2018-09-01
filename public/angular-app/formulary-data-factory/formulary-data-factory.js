@@ -4,12 +4,14 @@ function formularyDataFactory($http) {
   return {
     chaptersList: chaptersList,
     chaptersDisplay: chaptersDisplay,
+    listDisplay:listDisplay,
     chaptersUpdate: chaptersUpdate,
     chaptersDelete: chaptersDelete,
     postLists: postLists,
     categoryUpdate: categoryUpdate,
     categoryDelete: categoryDelete,
-    postSubcategories: postSubcategories
+    postSubcategories: postSubcategories,
+    postMedicines: postMedicines
   };
 
   function chaptersList() {
@@ -18,6 +20,10 @@ function formularyDataFactory($http) {
 
   function chaptersDisplay(id) {
     return $http.get('/api/chapter/' + id).then(complete).catch(failed);
+  }
+
+  function listDisplay(chapterId, listId){
+    return $http.get('/api/chapter/'+chapterId+'/lists/'+listId).then(complete).catch(failed);
   }
 
   function chaptersUpdate(id, chapter){
@@ -41,6 +47,10 @@ function formularyDataFactory($http) {
   }
   function postSubcategories(chapterId, listId, subcategories) {
     return $http.post('/api/chapter/' + chapterId + '/lists/'+ listId, subcategories).then(complete).catch(failed);
+  }
+
+  function postMedicines(chapterId, listId, subcategoryId, medicines) {
+    return $http.post('/api/chapter/' + chapterId + '/lists/'+ listId +'/'+ subcategoryId, medicines).then(complete).catch(failed);
   }
 
   function complete(response) {

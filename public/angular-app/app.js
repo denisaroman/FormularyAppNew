@@ -47,6 +47,12 @@ function config($httpProvider, $routeProvider){
         controllerAs: 'vm'
     })
 
+    .when('/chapter/:chapterId/formulary/:listId/:index/:subcategoryId', {
+      templateUrl: 'angular-app/formulary/formularyupdate.html',
+      controller: FormularyUpdateController,
+      controllerAs: 'vm'
+  })
+
     .when('/register', {
         templateUrl: 'angular-app/register/register.html',
         controller: RegisterController,

@@ -5,6 +5,7 @@ var ctrlFormulary = require('../controllers/formulary.controllers.js');
 var ctrlAdmin = require('../controllers/users.controllers.js');
 var ctrlLists = require('../controllers/lists.controller.js');
 var ctrlSubcategories = require('../controllers/subcategories.controller.js');
+var ctrlMedicines = require('../controllers/medicines.controller');
 
 router
     .route('/homepage')
@@ -30,6 +31,10 @@ router
   .put(ctrlLists.listsUpdateOne)
   .delete(ctrlLists.listsDeleteOne)
   .post(ctrlSubcategories.subcategoriesAddOne);
+
+router
+  .route('/chapter/:chapterId/lists/:listId/:subcategoryId') 
+  .post(ctrlMedicines.medicinesAddOne);
 
 //Authentication
 router
