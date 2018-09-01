@@ -53,6 +53,18 @@ function config($httpProvider, $routeProvider){
       controllerAs: 'vm'
   })
 
+    .when('/chapter/:chapterId/formulary/:listId/:index/:subcategoryId/:medicineGroupId', {
+      templateUrl: 'angular-app/formulary/medicineupdate.html',
+      controller: FormularyUpdateController,
+      controllerAs: 'vm'
+})
+
+  .when('/chapter/:chapterId/formulary/:listId/:index/:subcategoryId/:medicineGroupId/:substanceId', {
+    templateUrl: 'angular-app/formulary/substancesupdate.html',
+    controller: FormularyUpdateController,
+    controllerAs: 'vm'
+})
+
     .when('/register', {
         templateUrl: 'angular-app/register/register.html',
         controller: RegisterController,

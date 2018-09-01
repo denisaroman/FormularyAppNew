@@ -1,0 +1,13 @@
+<div class="container">
+        <hr>
+        <div class="jumbotron">
+        <form ng-if="vm.isLoggedIn()" ng-submit="vm.addBrand()">
+            <center><input type="text" class="form-control input-sm" ng-model="vm.Brand"></center>
+            <center><input type="text" class="form-control input-sm" ng-model="vm.Note"></center>
+            <center><input type="text" class="form-control input-sm" ng-model="vm.Link"></center>
+            <center><input type="text" class="form-control input-sm" ng-model="vm.Color"></center>
+            <br> 
+             <center><button type="submit" class="btn-primary">Add New </button></center>
+        </form>
+        </div>
+        </div>

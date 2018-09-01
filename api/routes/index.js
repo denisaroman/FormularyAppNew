@@ -6,6 +6,8 @@ var ctrlAdmin = require('../controllers/users.controllers.js');
 var ctrlLists = require('../controllers/lists.controller.js');
 var ctrlSubcategories = require('../controllers/subcategories.controller.js');
 var ctrlMedicines = require('../controllers/medicines.controller');
+var ctrlSubstances = require('../controllers/substances.controller');
+var ctrlBrand = require('../controllers/brand.controller');
 
 router
     .route('/homepage')
@@ -35,6 +37,14 @@ router
 router
   .route('/chapter/:chapterId/lists/:listId/:subcategoryId') 
   .post(ctrlMedicines.medicinesAddOne);
+
+router
+    .route('/chapter/:chapterId/lists/:listId/:subcategoryId/:medicineGroupId')
+    .post(ctrlSubstances.substancesAddOne);
+
+router
+    .route('/chapter/:chapterId/lists/:listId/:subcategoryId/:medicineGroupId/:substanceId')
+    .post(ctrlBrand.brandAddOne);
 
 //Authentication
 router

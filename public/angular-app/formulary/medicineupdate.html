@@ -1,0 +1,10 @@
+<div class="container">
+        <hr>
+        <div class="jumbotron">
+        <form ng-if="vm.isLoggedIn()" ng-submit="vm.addSubstance()">
+            <center><input type="text" class="form-control input-sm" ng-model="vm.Substance"></center>
+            <br> 
+             <center><button type="submit" class="btn-primary">Add New </button></center>
+        </form>
+        </div>
+        </div>
