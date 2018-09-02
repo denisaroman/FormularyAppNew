@@ -34,4 +34,4 @@ var formularySchema = new mongoose.Schema({
   List: [listSchema]
 });
 
-mongoose.model('ModelName', formularySchema, 'myCollection');
+mongoose.model('ModelName', formularySchema, 'todos');

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/Formulary';
+var dburl = 'mongodb://localhost:27017/Todoapp';
 var retry = null;
 mongoose.connect(dburl);
 
@@ -54,5 +54,5 @@ process.once('SIGUSR2', function() {
 
 
 // BRING IN YOUR SCHEMAS & MODELS
-require('./formulary.model');
+require('./formulary.model.js');
 require('./users.model.js');
