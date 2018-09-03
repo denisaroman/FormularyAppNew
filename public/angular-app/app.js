@@ -42,6 +42,7 @@ function config($httpProvider, $routeProvider){
     })
 
     .when('/chapter/:chapterId/formulary/:listId/:index', {
+      //.when('/chapter/:chapterId/formulary/:index', {
         templateUrl: 'angular-app/formulary/formulary.html',
         controller: FormularyController,
         controllerAs: 'vm'
